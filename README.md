@@ -8,6 +8,6 @@
 ### POST('/places'): to post a place, the country, description and the images to the database
 ### DELETE('/places/:id'): to delete the data related to a specific place
 
-## Outputs
-Check the complete demonstration of the app: 
+## Output:
+## Check the complete demonstration of the app: 
 ![app](client/app/assets/gif.gif)
