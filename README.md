@@ -9,4 +9,5 @@
 ### DELETE('/places/:id'): to delete the data related to a specific place
 
 ## Outputs
+Check the complete demonstration of the app: 
 ![app](client/app/assets/gif.gif)
