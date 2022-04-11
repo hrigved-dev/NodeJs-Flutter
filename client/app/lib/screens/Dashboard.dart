@@ -18,8 +18,7 @@ class _DashboardState extends State<Dashboard> {
   TravelProcess travelProcess = TravelProcess();
 
   getPlaces() async {
-    await travelProcess.getPlaces();
-    travel = travelProcess.travelList;
+    travel = await travelProcess.getPlaces();
     print(travel);
     setState(() {
       _loading = false;
@@ -27,9 +26,12 @@ class _DashboardState extends State<Dashboard> {
   }
 
   _updateStatusBar() {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
         statusBarIconBrightness: Brightness.dark,
-        statusBarColor: Colors.white));
+        statusBarColor: Colors.white,
+      ),
+    );
   }
 
   @override
@@ -70,20 +72,14 @@ class _DashboardState extends State<Dashboard> {
                   letterSpacing: 0.7,
                   fontWeight: FontWeight.w600),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            SizedBox(height: 10),
             Text(
               "The New 7 Wonders of the World.",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30),
             CupertinoSearchTextField(),
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30),
             _loading
                 ? Center(
                     child: Padding(
@@ -99,21 +95,22 @@ class _DashboardState extends State<Dashboard> {
                     height: 550,
                     width: 500,
                     child: ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: travel.length,
-                        scrollDirection: Axis.vertical,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: Scrollitems(
-                                mainImage: travel[index].imageUrl[1],
-                                place: travel[index].place,
-                                country: travel[index].country,
-                                description: travel[index].description,
-                                images: travel[index].imageUrl),
-                          );
-                        }),
-                  )
+                      shrinkWrap: true,
+                      itemCount: travel.length,
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Scrollitems(
+                              mainImage: travel[index].imageUrl[1],
+                              place: travel[index].place,
+                              country: travel[index].country,
+                              description: travel[index].description,
+                              images: travel[index].imageUrl),
+                        );
+                      },
+                    ),
+                  ),
           ],
         ),
       ),

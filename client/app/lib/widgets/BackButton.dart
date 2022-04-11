@@ -7,15 +7,18 @@ class BackButtonImage extends StatelessWidget {
       height: 50,
       width: 50,
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(25)),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(25),
+      ),
       child: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          )),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: Icon(
+          Icons.arrow_back,
+          color: Colors.black,
+        ),
+      ),
     );
   }
 }

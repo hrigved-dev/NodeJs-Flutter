@@ -23,9 +23,7 @@ class _TextsofPlaceState extends State<TextsofPlace> {
           style: TextStyle(
               fontSize: 25, fontWeight: FontWeight.w600, letterSpacing: 0.5),
         ),
-        SizedBox(
-          height: 1,
-        ),
+        SizedBox(height: 1),
         Row(
           children: [
             Icon(
@@ -38,9 +36,7 @@ class _TextsofPlaceState extends State<TextsofPlace> {
             ),
           ],
         ),
-        SizedBox(
-          height: 15,
-        ),
+        SizedBox(height: 15),
         Text(
           widget.description,
           style: TextStyle(fontSize: 17),

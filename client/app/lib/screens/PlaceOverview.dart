@@ -10,12 +10,13 @@ class PlaceOverview extends StatefulWidget {
   final String description;
   final List<dynamic> imgUrl;
 
-  PlaceOverview(
-      {required this.mainImage,
-      required this.place,
-      required this.country,
-      required this.description,
-      required this.imgUrl});
+  PlaceOverview({
+    required this.mainImage,
+    required this.place,
+    required this.country,
+    required this.description,
+    required this.imgUrl,
+  });
 
   @override
   _PlaceOverviewState createState() => _PlaceOverviewState();
@@ -33,13 +34,9 @@ class _PlaceOverviewState extends State<PlaceOverview> {
               mainImage: widget.mainImage,
               images: widget.imgUrl,
             ),
-            SizedBox(
-              height: 15,
-            ),
+            SizedBox(height: 15),
             ImagesList(images: widget.imgUrl),
-            SizedBox(
-              height: 15,
-            ),
+            SizedBox(height: 15),
             TextsofPlace(
               place: widget.place,
               country: widget.country,

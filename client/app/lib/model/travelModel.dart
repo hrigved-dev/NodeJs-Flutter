@@ -1,12 +1,13 @@
 class TravelModel {
-  late String place;
-  late String country;
-  late String description;
-  late List<dynamic> imageUrl;
+  final String place;
+  final String country;
+  final String description;
+  final List<dynamic> imageUrl;
 
-  TravelModel(
-      {required this.place,
-      required this.country,
-      required this.description,
-      required this.imageUrl});
+  TravelModel({
+    required this.place,
+    required this.country,
+    required this.description,
+    required this.imageUrl,
+  });
 }

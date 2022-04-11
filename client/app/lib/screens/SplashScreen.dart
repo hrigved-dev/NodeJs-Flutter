@@ -13,7 +13,10 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   _updateStatusBar() {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+      ),
+    );
   }
 
   @override
@@ -25,28 +28,29 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(alignment: Alignment.center, children: [
-        BackgroundVideo(),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Wonders!",
-              style: TextStyle(
-                fontSize: 50.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                // fontFamily: ,
+      body: Stack(
+        alignment: Alignment.center,
+        children: [
+          BackgroundVideo(),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Wonders!",
+                style: TextStyle(
+                  fontSize: 50.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  // fontFamily: ,
+                ),
               ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            CircularButton(),
-          ],
-        ),
-      ]),
+              SizedBox(height: 50),
+              CircularButton(),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

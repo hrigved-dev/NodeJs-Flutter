@@ -40,16 +40,17 @@ class _ImageViewsState extends State<ImageViews> {
       child: Stack(
         children: [
           Positioned.fill(
-              child: ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: Hero(
-              tag: 'mainImage',
-              child: Image.network(
-                widget.mainImage,
-                fit: BoxFit.fill,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Hero(
+                tag: 'mainImage',
+                child: Image.network(
+                  widget.mainImage,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
-          )),
+          ),
           Padding(padding: EdgeInsets.all(10), child: BackButtonImage()),
         ],
       ),

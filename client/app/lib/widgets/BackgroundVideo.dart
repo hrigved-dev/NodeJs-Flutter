@@ -15,9 +15,13 @@ class _BackgroundVideoState extends State<BackgroundVideo> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.asset('assets/video/finalvideo.m4v')
-      ..initialize().then((value) => setState(() {
+      ..initialize().then(
+        (value) => setState(
+          () {
             _controller.play();
-          }));
+          },
+        ),
+      );
   }
 
   @override
@@ -28,8 +32,9 @@ class _BackgroundVideoState extends State<BackgroundVideo> {
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: AspectRatio(
-                  aspectRatio: _controller.value.aspectRatio,
-                  child: VideoPlayer(_controller)),
+                aspectRatio: _controller.value.aspectRatio,
+                child: VideoPlayer(_controller),
+              ),
             )
           : Container(),
     );
